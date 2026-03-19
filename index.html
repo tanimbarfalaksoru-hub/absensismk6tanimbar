@@ -131,7 +131,7 @@
                     <button class="md:hidden text-slate-600 hover:text-primary transition" onclick="toggleSidebar()">
                         <i class="fas fa-bars text-xl"></i>
                     </button>
-                    <h2 class="text-xl font-semibold text-slate-800" id="headerTitle">Papan Pemuka</h2>
+                    <h2 class="text-xl font-semibold text-slate-800" id="headerTitle">Dashboard</h2>
                 </div>
                 <div class="flex items-center gap-4">
                     <span class="text-sm text-slate-500 hidden sm:block"><i class="far fa-calendar-alt mr-1"></i> <span id="currentDate"></span></span>
@@ -168,7 +168,7 @@
                         <div class="glass-card p-6 flex items-center gap-4 border-l-4 border-orange-500">
                             <div class="bg-orange-100 text-orange-600 p-3 rounded-lg text-2xl"><i class="fas fa-chart-line"></i></div>
                             <div>
-                                <p class="text-sm text-slate-500 font-medium">Peratus Kehadiran</p>
+                                <p class="text-sm text-slate-500 font-medium">Presentase Kehadiran</p>
                                 <h3 class="text-2xl font-bold text-slate-800" id="dash-persen">0%</h3>
                             </div>
                         </div>
@@ -182,14 +182,14 @@
                             </div>
                         </div>
                         <div class="glass-card p-6">
-                            <h3 class="font-semibold text-slate-800 mb-4">Maklumat Sistem</h3>
+                            <h3 class="font-semibold text-slate-800 mb-4">Informasi Sistem</h3>
                             <ul class="space-y-4 text-sm">
                                 <li class="flex justify-between border-b pb-2"><span class="text-slate-500">Tahun Akademik</span><span class="font-medium" id="info-ta">-</span></li>
-                                <li class="flex justify-between border-b pb-2"><span class="text-slate-500">Masa Sistem</span><span class="font-medium" id="info-time">Live</span></li>
+                                <li class="flex justify-between border-b pb-2"><span class="text-slate-500">Waktu Sistem</span><span class="font-medium" id="info-time">Live</span></li>
                                 <li class="flex justify-between border-b pb-2"><span class="text-slate-500">Hak Akses</span><span class="font-medium"><span class="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs" id="info-role"></span></span></li>
                             </ul>
                             <div class="mt-6 bg-slate-50 p-4 rounded-lg border border-slate-100">
-                                <p class="text-xs text-slate-500 text-center">Pastikan untuk mengisi kehadiran setiap hari sebelum sesi persekolahan tamat.</p>
+                                <p class="text-xs text-slate-500 text-center">Pastikan untuk mengisi absensi setiap hari sebelum jam pelajaran berakhir.</p>
                             </div>
                         </div>
                     </div>
@@ -206,12 +206,12 @@
                                 </select>
                             </div>
                             <div>
-                                <label class="block text-sm font-medium text-slate-700 mb-1">Tarikh</label>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">Tanggal</label>
                                 <input type="date" id="absensiTanggal" class="w-full rounded-lg border border-slate-300 px-4 py-2 focus:ring-2 focus:ring-primary">
                             </div>
                             <div>
                                 <button onclick="loadFormAbsensi()" class="w-full bg-primary hover:bg-blue-800 text-white font-medium py-2 rounded-lg transition">
-                                    <i class="fas fa-search mr-1"></i> Papar Senarai
+                                    <i class="fas fa-search mr-1"></i> Tampilkan Daftar
                                 </button>
                             </div>
                         </div>
@@ -307,12 +307,12 @@
                     <div class="glass-card p-6 mb-6">
                         <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-end">
                             <div>
-                                <label class="block text-sm font-medium text-slate-700 mb-1">Tapis Masa</label>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">Filter Waktu</label>
                                 <select id="filterWaktu" onchange="toggleCustomDate()" class="w-full rounded-lg border border-slate-300 px-4 py-2 text-sm focus:ring-2 focus:ring-primary">
                                     <option value="hari_ini">Hari Ini</option>
                                     <option value="minggu_ini">Minggu Ini</option>
                                     <option value="bulan_ini">Bulan Ini</option>
-                                    <option value="custom">Tersuai (Pilih Tarikh)</option>
+                                    <option value="custom">Tersuai (Pilih Tanggal)</option>
                                 </select>
                             </div>
                             <div id="wrapCustomDate" class="hidden col-span-2 grid grid-cols-2 gap-2">
@@ -326,14 +326,14 @@
                                 </div>
                             </div>
                             <div>
-                                <label class="block text-sm font-medium text-slate-700 mb-1">Tapis Kelas</label>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">Filter Kelas</label>
                                 <select id="filterKelasLaporan" class="w-full rounded-lg border border-slate-300 px-4 py-2 text-sm focus:ring-2 focus:ring-primary">
                                     <option value="Semua">Semua Kelas</option>
                                 </select>
                             </div>
                             <div>
                                 <button onclick="loadLaporan()" class="w-full bg-primary hover:bg-blue-800 text-white text-sm font-medium py-2 rounded-lg transition">
-                                    <i class="fas fa-filter mr-1"></i> Terapkan Tapisan
+                                    <i class="fas fa-filter mr-1"></i> Terapkan Filter
                                 </button>
                             </div>
                         </div>
@@ -368,7 +368,7 @@
                             <table class="w-full text-sm text-left border-collapse border border-slate-200" id="tableLaporanExport">
                                 <thead class="text-xs text-slate-600 uppercase bg-slate-100 border-b border-slate-200">
                                     <tr>
-                                        <th class="border border-slate-200 px-4 py-2">Tarikh</th>
+                                        <th class="border border-slate-200 px-4 py-2">Tanggal</th>
                                         <th class="border border-slate-200 px-4 py-2">Kelas</th>
                                         <th class="border border-slate-200 px-4 py-2">NIS</th>
                                         <th class="border border-slate-200 px-4 py-2">Nama Pelajar</th>
@@ -394,7 +394,7 @@
                 <!-- VIEW: PENGATURAN -->
                 <div id="view-pengaturan" class="view-section fade-in hidden">
                     <div class="max-w-2xl mx-auto glass-card p-6 md:p-8">
-                        <h3 class="font-bold text-lg text-slate-800 border-b pb-3 mb-6"><i class="fas fa-cog text-slate-400 mr-2"></i> Tetapan Aplikasi</h3>
+                        <h3 class="font-bold text-lg text-slate-800 border-b pb-3 mb-6"><i class="fas fa-cog text-slate-400 mr-2"></i> Pengaturan Aplikasi</h3>
                         <form id="formPengaturan" onsubmit="savePengaturan(event)">
                             <div class="space-y-5">
                                 <div>
@@ -584,22 +584,22 @@
 
         // --- PEMULAAN ---
         window.onload = async () => {
-            // Kemas kini Tarikh Pengepala
+            // Kemas kini Tanggal Pengepala
             const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
             document.getElementById('currentDate').textContent = new Date().toLocaleDateString('ms-MY', options);
             
-            // Tetapkan input tarikh ke hari ini
+            // Tetapkan input Tanggal ke hari ini
             const today = new Date().toISOString().split('T')[0];
             document.getElementById('absensiTanggal').value = today;
             document.getElementById('filterStart').value = today;
             document.getElementById('filterEnd').value = today;
 
             try {
-                // Ambil Tetapan
+                // Ambil Pengaturan
                 appConfig = await apiCall('getPengaturan');
                 applyConfig(appConfig);
             } catch(e) {
-                console.log("Gagal memuat tetapan awal", e);
+                console.log("Gagal memuat Pengaturan awal", e);
             }
         };
 
@@ -670,12 +670,12 @@
 
         // --- NAVIGASI ---
         const menuItems = [
-            { id: 'dashboard', icon: 'fa-tachometer-alt', text: 'Papan Pemuka', roles: ['Admin', 'Guru'] },
+            { id: 'dashboard', icon: 'fa-tachometer-alt', text: 'Dashboard', roles: ['Admin', 'Guru'] },
             { id: 'absensi', icon: 'fa-clipboard-list', text: 'Input Kehadiran', roles: ['Admin', 'Guru'] },
             { id: 'siswa', icon: 'fa-user-graduate', text: 'Data Pelajar', roles: ['Admin'] },
             { id: 'kelas', icon: 'fa-chalkboard', text: 'Data Kelas', roles: ['Admin'] },
             { id: 'laporan', icon: 'fa-file-alt', text: 'Laporan', roles: ['Admin', 'Guru'] },
-            { id: 'pengaturan', icon: 'fa-cog', text: 'Tetapan', roles: ['Admin'] }
+            { id: 'pengaturan', icon: 'fa-cog', text: 'Pengaturan', roles: ['Admin'] }
         ];
 
         function buildMenu() {
@@ -701,7 +701,7 @@
             if(activeNav) activeNav.classList.add('active');
 
             const item = menuItems.find(m => m.id === viewId);
-            document.getElementById('headerTitle').innerText = item ? item.text : 'Papan Pemuka';
+            document.getElementById('headerTitle').innerText = item ? item.text : 'Dashboard';
 
             document.querySelectorAll('.view-section').forEach(el => el.classList.add('hidden'));
             
@@ -713,7 +713,7 @@
             else if(viewId === 'absensi') prepFormAbsensi();
         }
 
-        // --- PAPAN PEMUKA ---
+        // --- Dashboard ---
         async function loadDashboard() {
             try {
                 const data = await apiCall('getDashboard');
@@ -723,7 +723,7 @@
                 document.getElementById('dash-persen').innerText = data.persentase + "%";
 
                 renderChart(data.chartData);
-            } catch(e) { console.error("Ralat memuatkan papan pemuka", e); }
+            } catch(e) { console.error("Ralat memuatkan Dashboard", e); }
         }
 
         function renderChart(dataArr) {
@@ -733,7 +733,7 @@
             chartInstance = new Chart(ctx, {
                 type: 'doughnut',
                 data: {
-                    labels: ['Hadir', 'Izin', 'Sakit', 'Alfa'],
+                    labels: ['Hadir', 'Izin', 'Sakit', 'Alpa'],
                     datasets: [{
                         data: dataArr,
                         backgroundColor: ['#3b82f6', '#f59e0b', '#10b981', '#ef4444'],
@@ -935,7 +935,7 @@
             const kelas = document.getElementById('absensiKelas').value;
             const tgl = document.getElementById('absensiTanggal').value;
             
-            if(!kelas || !tgl) return showToast('warning', 'Pilih kelas dan tarikh terlebih dahulu');
+            if(!kelas || !tgl) return showToast('warning', 'Pilih kelas dan Tanggal terlebih dahulu');
 
             try {
                 const siswaList = await apiCall('getSiswaByKelas', kelas);
@@ -965,7 +965,7 @@
                                     <label class="cursor-pointer flex items-center gap-1"><input type="radio" name="${id}" value="Hadir" class="w-4 h-4 text-blue-600 focus:ring-blue-500" checked> <span class="text-sm font-medium text-blue-700">H</span></label>
                                     <label class="cursor-pointer flex items-center gap-1"><input type="radio" name="${id}" value="Izin" class="w-4 h-4 text-yellow-500 focus:ring-yellow-500"> <span class="text-sm font-medium text-yellow-600">I</span></label>
                                     <label class="cursor-pointer flex items-center gap-1"><input type="radio" name="${id}" value="Sakit" class="w-4 h-4 text-green-500 focus:ring-green-500"> <span class="text-sm font-medium text-green-600">S</span></label>
-                                    <label class="cursor-pointer flex items-center gap-1"><input type="radio" name="${id}" value="Alfa" class="w-4 h-4 text-red-600 focus:ring-red-500"> <span class="text-sm font-medium text-red-600">A</span></label>
+                                    <label class="cursor-pointer flex items-center gap-1"><input type="radio" name="${id}" value="Alpa" class="w-4 h-4 text-red-600 focus:ring-red-500"> <span class="text-sm font-medium text-red-600">A</span></label>
                                 </div>
                             </td>
                         </tr>
@@ -1124,7 +1124,7 @@
             html2pdf().set(opt).from(element).save().then(()=> { hideLoader(); });
         }
 
-        // --- TETAPAN ---
+        // --- Pengaturan ---
         async function savePengaturan(e) {
             e.preventDefault();
             const payload = {
